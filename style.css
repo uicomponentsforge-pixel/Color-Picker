@@ -1,0 +1,352 @@
+* {
+    box-sizing: border-box
+}
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #202124;
+    background: #f8f9fa
+}
+
+body {
+    margin: 0;
+    padding: 28px 16px;
+    min-height: 100vh
+}
+
+.app {
+    max-width: 930px;
+    margin: 0 auto
+}
+
+header {
+    margin: 0 0 22px
+}
+
+h1 {
+    font-size: 27px;
+    font-weight: 500;
+    margin: 0 0 8px
+}
+
+.google-mark {
+    font-size: 12px;
+    letter-spacing: .12em;
+    font-weight: 700;
+    color: #4285f4;
+    margin-bottom: 12px
+}
+
+header p {
+    color: #5f6368;
+    font-size: 14px;
+    margin: 0
+}
+
+.picker-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    border: 1px solid #dadce0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px #0000000d
+}
+
+.visual {
+    padding: 22px;
+    border-right: 1px solid #e8eaed
+}
+
+.sv-field {
+    height: 300px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: crosshair;
+    touch-action: none;
+    background: #6c5ce7
+}
+
+.sv-field:before,
+.sv-field:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none
+}
+
+.sv-field:before {
+    background: linear-gradient(to right, #fff, transparent)
+}
+
+.sv-field:after {
+    background: linear-gradient(to top, #000, transparent)
+}
+
+.sv-marker {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #333;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2
+}
+
+.hue-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0;
+    color: #5f6368;
+    font-size: 13px
+}
+
+.hue-row label {
+    width: 34px
+}
+
+.hue-row input {
+    flex: 1;
+    min-width: 0;
+    appearance: none;
+    height: 12px;
+    border-radius: 8px;
+    background: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+    cursor: pointer
+}
+
+.hue-row input::-webkit-slider-thumb {
+    appearance: none;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #777;
+    box-shadow: 0 1px 3px #0003
+}
+
+.preview-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px
+}
+
+.swatch {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    background: #6c5ce7
+}
+
+.preview-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+    flex: 1
+}
+
+.preview-text strong {
+    font-size: 14px;
+    font-weight: 500
+}
+
+.preview-text span {
+    font-size: 13px;
+    color: #5f6368;
+    font-family: Consolas, monospace
+}
+
+.preview-row input[type=color] {
+    width: 42px;
+    height: 38px;
+    padding: 3px;
+    border: 1px solid #dadce0;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+.values {
+    padding: 22px;
+    min-width: 0
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 18px
+}
+
+.format {
+    margin-bottom: 14px
+}
+
+.format>label {
+    display: block;
+    font-size: 12px;
+    color: #5f6368;
+    margin-bottom: 6px
+}
+
+.value-line {
+    display: flex;
+    gap: 8px
+}
+
+.value-line input,
+.channels input {
+    width: 100%;
+    min-width: 0;
+    height: 38px;
+    padding: 0 10px;
+    border: 1px solid #dadce0;
+    border-radius: 6px;
+    background: #fff;
+    color: #202124;
+    font-size: 14px
+}
+
+.value-line input:focus,
+.channels input:focus {
+    outline: 2px solid #d2e3fc;
+    border-color: #4285f4
+}
+
+.channels {
+    display: grid;
+    gap: 8px
+}
+
+.three {
+    grid-template-columns: repeat(3, minmax(0, 1fr))
+}
+
+.four {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 5px
+}
+
+.channels input {
+    text-align: center;
+    padding: 0 3px
+}
+
+.channels input::-webkit-inner-spin-button {
+    opacity: 1
+}
+
+button {
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 6px;
+    border: 1px solid #dadce0;
+    background: #fff;
+    color: #3c4043;
+    font-weight: 500;
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap
+}
+
+button:hover {
+    background: #f8f9fa
+}
+
+button:focus-visible {
+    outline: 2px solid #4285f4;
+    outline-offset: 2px
+}
+
+.value-line button {
+    min-width: 62px
+}
+
+.copy-row {
+    width: 100%;
+    height: 30px;
+    margin-top: 6px;
+    color: #1a73e8;
+    border-color: transparent;
+    background: #f8faff
+}
+
+.copy-row:hover {
+    background: #e8f0fe
+}
+
+.bottom-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+    margin-top: 18px
+}
+
+.blue {
+    background: #1a73e8;
+    color: white;
+    border-color: #1a73e8
+}
+
+.blue:hover {
+    background: #1765cc
+}
+
+#status {
+    font-size: 12px;
+    color: #5f6368;
+    min-height: 16px;
+    line-height: 1.4;
+    margin: 12px 0 0
+}
+
+footer {
+    font-size: 12px;
+    color: #5f6368;
+    line-height: 1.5;
+    margin: 16px 2px
+}
+
+@media(max-width:680px) {
+    body {
+        padding: 18px 10px
+    }
+
+    .picker-card {
+        grid-template-columns: 1fr
+    }
+
+    .visual {
+        border-right: 0;
+        border-bottom: 1px solid #e8eaed;
+        padding: 16px
+    }
+
+    .values {
+        padding: 18px
+    }
+
+    .sv-field {
+        height: 240px
+    }
+
+    .four {
+        gap: 4px
+    }
+
+    .channels input {
+        font-size: 13px
+    }
+
+    .value-line input {
+        font-size: 14px
+    }
+}

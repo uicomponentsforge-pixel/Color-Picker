@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Color Picker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="app">
+    <header>
+      <div class="google-mark">COLOR PICKER</div>
+      <h1>Color picker</h1>
+      <p>Choose a color and see its values in every format.</p>
+    </header>
+    <section class="picker-card">
+      <div class="visual">
+        <div id="svField" class="sv-field" role="slider" tabindex="0" aria-label="Saturation and value picker">
+          <div id="svMarker" class="sv-marker"></div>
+        </div>
+        <div class="hue-row"><label for="hueSlider">Hue</label><input id="hueSlider" type="range" min="0" max="360"
+            value="250"></div>
+        <div class="preview-row">
+          <div id="swatch" class="swatch"></div>
+          <div class="preview-text"><strong id="colorName">Selected color</strong><span id="hexPreview">#6C5CE7</span>
+          </div><input id="nativeColor" type="color" value="#6c5ce7" aria-label="Open standard color dialog">
+        </div>
+      </div>
+      <div class="values">
+        <div class="section-title">Color values</div>
+        <div class="format"><label for="hex">HEX</label>
+          <div class="value-line"><input id="hex" value="#6C5CE7" maxlength="7" spellcheck="false"><button
+              data-copy="hex">Copy</button></div>
+        </div>
+        <div class="format"><label>RGB</label>
+          <div class="channels three"><input id="r" aria-label="Red" type="number" min="0" max="255"><input id="g"
+              aria-label="Green" type="number" min="0" max="255"><input id="b" aria-label="Blue" type="number" min="0"
+              max="255"></div><button class="copy-row" data-copy-format="rgb">Copy RGB</button>
+        </div>
+        <div class="format"><label>HSL</label>
+          <div class="channels three"><input id="h" aria-label="Hue degrees" type="number" min="0" max="360"><input
+              id="s" aria-label="Saturation percent" type="number" min="0" max="100"><input id="l"
+              aria-label="Lightness percent" type="number" min="0" max="100"></div><button class="copy-row"
+            data-copy-format="hsl">Copy HSL</button>
+        </div>
+        <div class="format"><label>HSV</label>
+          <div class="channels three"><input id="hh" aria-label="HSV hue degrees" type="number" min="0" max="360"><input
+              id="ss" aria-label="HSV saturation percent" type="number" min="0" max="100"><input id="v"
+              aria-label="Value percent" type="number" min="0" max="100"></div><button class="copy-row"
+            data-copy-format="hsv">Copy HSV</button>
+        </div>
+        <div class="format"><label>CMYK</label>
+          <div class="channels four"><input id="c" aria-label="Cyan percent" type="number" min="0" max="100"><input
+              id="m" aria-label="Magenta percent" type="number" min="0" max="100"><input id="y"
+              aria-label="Yellow percent" type="number" min="0" max="100"><input id="k" aria-label="Black percent"
+              type="number" min="0" max="100"></div><button class="copy-row" data-copy-format="cmyk">Copy CMYK</button>
+        </div>
+        <div class="bottom-actions"><button id="eyedropper" class="blue">Eyedropper</button><button id="random">Random
+            color</button></div>
+        <p id="status" role="status" aria-live="polite">Select a color to get started.</p>
+      </div>
+    </section>
+    <footer>Inspired by the compact color-picker layout in Google Search. CMYK values are approximate RGB conversions.
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
